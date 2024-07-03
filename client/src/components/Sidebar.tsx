@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { VscTwitter } from "react-icons/vsc";
+import SidebarOptions from "./SidebarOptions";
 
 const style = {
   wrapper: `flex-[0.7] px-8 flex flex-col`,
@@ -17,21 +18,19 @@ const style = {
   moreContainer: `flex items-center mr-2`,
 };
 
-const Sidebar = () => {
+interface SidebarProps {
+  initialSelectedIcon: string;
+}
+
+const Sidebar = ({initialSelectedIcon = "Home"} : SidebarProps) => {
+  const [selected, setSelected] = useState<string>("");
   return (
     <div className={style.wrapper}>
       <div className={style.twitterIconContainer}>
         <VscTwitter />
       </div>
       <div className={style.navContainer}>
-        <div>Home</div>
-        <div>Explore</div>
-        <div>Notifications</div>
-        <div>Messages</div>
-        <div>Bookmarks</div>
-        <div>Lists</div>
-        <div>Profile</div>
-        <div>More</div>
+        <SidebarOptions text="Home" />
         <button className={style.tweetButton}>Mint</button>
       </div>
       <div className={style.profileButton}>
