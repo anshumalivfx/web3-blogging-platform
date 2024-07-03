@@ -15,6 +15,12 @@ import { FiBell } from "react-icons/fi";
 import { HiOutlineMail, HiMail } from "react-icons/hi";
 import { FaRegListAlt, FaHashtag, FaBell } from "react-icons/fa";
 import { CgMoreO } from "react-icons/cg";
+import {
+  BsBookmark,
+  BsBookmarkFill,
+  BsPerson,
+  BsPersonFill,
+} from "react-icons/bs";
 
 const style = {
   wrapper: `flex-[0.7] px-8 flex flex-col`,
@@ -36,7 +42,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ initialSelectedIcon = "Home" }: SidebarProps) => {
-  const [selected, setSelected] = useState<string>("");
+  const [selected, setSelected] = useState<string>(initialSelectedIcon);
   return (
     <div className={style.wrapper}>
       <div className={style.twitterIconContainer}>
@@ -49,6 +55,55 @@ const Sidebar = ({ initialSelectedIcon = "Home" }: SidebarProps) => {
           isActive={selected === "Home"}
           setSelected={setSelected}
           redirect="/"
+        />
+        <SidebarOptions
+          text="Explore"
+          Icon={selected === "Explore" ? BiHash : BiHash}
+          isActive={selected === "Explore"}
+          setSelected={setSelected}
+          redirect="/explore"
+        />
+        <SidebarOptions
+          text="Notifications"
+          Icon={selected === "Notifications" ? FiBell : FiBell}
+          isActive={selected === "Notifications"}
+          setSelected={setSelected}
+          redirect="/notifications"
+        />
+        <SidebarOptions
+          text="Messages"
+          Icon={selected === "Messages" ? HiMail : HiOutlineMail}
+          isActive={selected === "Messages"}
+          setSelected={setSelected}
+          redirect="/messages"
+        />
+        <SidebarOptions
+          text="Bookmarks"
+          Icon={selected === "Bookmarks" ? BsBookmarkFill : BsBookmark}
+          isActive={selected === "Bookmarks"}
+          setSelected={setSelected}
+          redirect="/bookmarks"
+        />
+        <SidebarOptions
+          text="Lists"
+          Icon={selected === "Lists" ? FaRegListAlt : FaRegListAlt}
+          isActive={selected === "Lists"}
+          setSelected={setSelected}
+          redirect="/lists"
+        />
+        <SidebarOptions
+          text="Profile"
+          Icon={selected === "Profile" ? BsPersonFill : BsPerson}
+          isActive={selected === "Profile"}
+          setSelected={setSelected}
+          redirect="/profile"
+        />
+        <SidebarOptions
+          text="More"
+          Icon={selected === "More" ? CgMoreO : CgMoreO}
+          isActive={selected === "More"}
+          setSelected={setSelected}
+          redirect="/more"
         />
         <button className={style.tweetButton}>Mint</button>
       </div>
