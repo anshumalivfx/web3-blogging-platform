@@ -1,7 +1,20 @@
+"use client";
 import React, { useState } from "react";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { VscTwitter } from "react-icons/vsc";
 import SidebarOptions from "./SidebarOptions";
+import {
+  RiHome2Fill,
+  RiHome2Line,
+  RiFileList2Fill,
+  RiHome7Fill,
+  RiHome7Line,
+} from "react-icons/ri";
+import { BiHash } from "react-icons/bi";
+import { FiBell } from "react-icons/fi";
+import { HiOutlineMail, HiMail } from "react-icons/hi";
+import { FaRegListAlt, FaHashtag, FaBell } from "react-icons/fa";
+import { CgMoreO } from "react-icons/cg";
 
 const style = {
   wrapper: `flex-[0.7] px-8 flex flex-col`,
@@ -22,7 +35,7 @@ interface SidebarProps {
   initialSelectedIcon: string;
 }
 
-const Sidebar = ({initialSelectedIcon = "Home"} : SidebarProps) => {
+const Sidebar = ({ initialSelectedIcon = "Home" }: SidebarProps) => {
   const [selected, setSelected] = useState<string>("");
   return (
     <div className={style.wrapper}>
@@ -30,7 +43,13 @@ const Sidebar = ({initialSelectedIcon = "Home"} : SidebarProps) => {
         <VscTwitter />
       </div>
       <div className={style.navContainer}>
-        <SidebarOptions text="Home" />
+        <SidebarOptions
+          text="Home"
+          Icon={selected === "Home" ? RiHome7Fill : RiHome7Line}
+          isActive={selected === "Home"}
+          setSelected={setSelected}
+          redirect="/"
+        />
         <button className={style.tweetButton}>Mint</button>
       </div>
       <div className={style.profileButton}>
