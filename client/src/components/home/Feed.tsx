@@ -1,6 +1,7 @@
 import React from "react";
 import { BsStars } from "react-icons/bs";
 import TweetBox from "./TweetBox";
+import Post from "../Post";
 
 const style = {
   wrapper: `flex-[2] border-r border-l border-[#38444d] overflow-y-scroll`,
@@ -25,8 +26,15 @@ const tweets = [
   {
     displayName: "Anshumali",
     username: "0x1209901289081209383129381290139",
-    avatar:
-      "https://media.licdn.com/dms/image/D5603AQG059cA-3UadA/profile-displayphoto-shrink_800_800/0/1719390971678?e=1726099200&v=beta&t=AmJqsjMU4DeOJDoEs9IOy46AGopx28x2oSwXlD5R4u8",
+    avatar: "https://avatars.githubusercontent.com/u/52081717?v=4",
+    text: "gm",
+    isProfileImageNft: true,
+    timestamp: "2024-07-09T12:00:00Z",
+  },
+  {
+    displayName: "Anshumali",
+    username: "0x1209901289081209383129381290139",
+    avatar: "https://avatars.githubusercontent.com/u/52081717?v=4",
     text: "gm",
     isProfileImageNft: false,
     timestamp: "2024-07-09T12:00:00Z",
@@ -34,8 +42,7 @@ const tweets = [
   {
     displayName: "Anshumali",
     username: "0x1209901289081209383129381290139",
-    avatar:
-      "https://media.licdn.com/dms/image/D5603AQG059cA-3UadA/profile-displayphoto-shrink_800_800/0/1719390971678?e=1726099200&v=beta&t=AmJqsjMU4DeOJDoEs9IOy46AGopx28x2oSwXlD5R4u8",
+    avatar: "https://avatars.githubusercontent.com/u/52081717?v=4",
     text: "gm",
     isProfileImageNft: false,
     timestamp: "2024-07-09T12:00:00Z",
@@ -43,8 +50,7 @@ const tweets = [
   {
     displayName: "Anshumali",
     username: "0x1209901289081209383129381290139",
-    avatar:
-      "https://media.licdn.com/dms/image/D5603AQG059cA-3UadA/profile-displayphoto-shrink_800_800/0/1719390971678?e=1726099200&v=beta&t=AmJqsjMU4DeOJDoEs9IOy46AGopx28x2oSwXlD5R4u8",
+    avatar: "https://avatars.githubusercontent.com/u/52081717?v=4",
     text: "gm",
     isProfileImageNft: false,
     timestamp: "2024-07-09T12:00:00Z",
@@ -52,21 +58,12 @@ const tweets = [
   {
     displayName: "Anshumali",
     username: "0x1209901289081209383129381290139",
-    avatar:
-      "https://media.licdn.com/dms/image/D5603AQG059cA-3UadA/profile-displayphoto-shrink_800_800/0/1719390971678?e=1726099200&v=beta&t=AmJqsjMU4DeOJDoEs9IOy46AGopx28x2oSwXlD5R4u8",
+    avatar: "https://avatars.githubusercontent.com/u/52081717?v=4",
     text: "gm",
     isProfileImageNft: false,
     timestamp: "2024-07-09T12:00:00Z",
   },
-  {
-    displayName: "Anshumali",
-    username: "0x1209901289081209383129381290139",
-    avatar:
-      "https://media.licdn.com/dms/image/D5603AQG059cA-3UadA/profile-displayphoto-shrink_800_800/0/1719390971678?e=1726099200&v=beta&t=AmJqsjMU4DeOJDoEs9IOy46AGopx28x2oSwXlD5R4u8",
-    text: "gm",
-    isProfileImageNft: false,
-    timestamp: "2024-07-09T12:00:00Z",
-  },
+
 ];
 
 const Feed = () => {
@@ -77,6 +74,19 @@ const Feed = () => {
         <BsStars />
       </div>
       <TweetBox />
+      {tweets.map((tweet, key) => (
+        <div>
+          <Post
+            key={key}
+            displayName={tweet.displayName}
+            username={tweet.username}
+            avatar={tweet.avatar}
+            text={tweet.text}
+            isProfileImageNft={tweet.isProfileImageNft}
+            timestamp={tweet.timestamp}
+          />
+        </div>
+      ))}
     </div>
   );
 };
