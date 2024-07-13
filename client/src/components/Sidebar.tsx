@@ -20,6 +20,7 @@ import {
   BsBookmarkFill,
   BsPerson,
   BsPersonFill,
+  BsTwitterX,
 } from "react-icons/bs";
 
 const style = {
@@ -46,7 +47,7 @@ const Sidebar = ({ initialSelectedIcon = "Home" }: SidebarProps) => {
   return (
     <div className={style.wrapper}>
       <div className={style.twitterIconContainer}>
-        <VscTwitter />
+        <BsTwitterX />
       </div>
       <div className={style.navContainer}>
         <SidebarOptions
