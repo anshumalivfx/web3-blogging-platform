@@ -22,6 +22,7 @@ const style = {
 
 const ProfileHeader = () => {
   const router = useRouter();
+  const isProfileImageNft = true;
   return (
     <div className={style.wrapper}>
       <div className={style.header}>
@@ -34,12 +35,34 @@ const ProfileHeader = () => {
           <BsArrowLeftShort />
         </div>
         <div className={style.details}>
-            <div>
-                Anshumali Karna
-            </div>
-            <div>
-                4 Tweets
-            </div>
+          <div className={style.primary}>Anshumali Karna</div>
+          <div className={style.secondary}>4 Tweets</div>
+        </div>
+      </div>
+      <div>
+        <div className={style.coverPhotoContainer}>
+          <img
+            src="https://pbs.twimg.com/profile_banners/2183970876/1720979520/1500x500"
+            alt=""
+            className={style.coverPhoto}
+          />
+        </div>
+        <div className={style.profileImageContainer}>
+          <div
+            className={
+              isProfileImageNft ? `hex` : `${style.profileImageContainer}`
+            }
+          >
+            <img
+              src="https://avatars.githubusercontent.com/u/52081717?v=4"
+              alt=""
+              className={
+                isProfileImageNft
+                  ? `${style.profileImageNft}`
+                  : `${style.profileImage}`
+              }
+            />
+          </div>
         </div>
       </div>
     </div>
