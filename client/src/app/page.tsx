@@ -1,4 +1,5 @@
 import Sidebar from "@/components/Sidebar";
+import Widgets from "@/components/Widgets";
 import Feed from "@/components/home/Feed";
 
 const style = {
@@ -12,7 +13,7 @@ export default function Home() {
       <div className={style.content}>
         <Sidebar initialSelectedIcon="Home" />
         <Feed />
-        <h2>Widgets</h2>
+        <Widgets />
       </div>
     </div>
   );

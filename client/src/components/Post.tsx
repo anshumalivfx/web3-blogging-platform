@@ -1,4 +1,8 @@
 import React from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsFillCheckCircleFill, BsFillPatchCheckFill } from "react-icons/bs";
+import { FaRegComment, FaRetweet, FaShare } from "react-icons/fa";
+import { format } from "timeago.js";
 
 interface PostProps {
   displayName: string;
@@ -43,10 +47,43 @@ const Post = ({
               : `${style.profileImage}`
           }
         />
+      </div>
+      <div className={style.postMain}>
         <div>
-            <div className={style.headerDetails}>
-                
-            </div>
+          <span className={style.headerDetails}>
+            <span className={style.name}>{displayName}</span>
+            {isProfileImageNft && (
+              <span className={style.verified}>
+                <BsFillPatchCheckFill />
+              </span>
+            )}
+            <span className={style.handleAndTimeAgo}>
+              @{username} · {format(new Date(timestamp).getTime())}
+            </span>
+          </span>
+          <div className={style.tweet}>{text}</div>
+        </div>
+        <div className={`${style.footer}`}>
+          <div
+            className={`${style.footerIcon} hover:bg-[#1e364a] hover:text-[#1d9bf0]`}
+          >
+            <FaRegComment />
+          </div>
+          <div
+            className={`${style.footerIcon} hover:bg-[#1e364a] hover:text-[#1d9bf0]`}
+          >
+            <FaRetweet />
+          </div>
+          <div
+            className={`${style.footerIcon} hover:bg-[#1e364a] hover:text-[#1d9bf0]`}
+          >
+            <AiOutlineHeart />
+          </div>
+          <div
+            className={`${style.footerIcon} hover:bg-[#1e364a] hover:text-[#1d9bf0]`}
+          >
+            <FaShare />
+          </div>
         </div>
       </div>
     </div>

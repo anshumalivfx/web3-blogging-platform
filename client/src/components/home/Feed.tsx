@@ -63,7 +63,6 @@ const tweets = [
     isProfileImageNft: false,
     timestamp: "2024-07-09T12:00:00Z",
   },
-
 ];
 
 const Feed = () => {
@@ -79,7 +78,9 @@ const Feed = () => {
           <Post
             key={key}
             displayName={tweet.displayName}
-            username={tweet.username}
+            username={`${tweet.username.slice(0, 4)}...${tweet.username.slice(
+              -4
+            )}`}
             avatar={tweet.avatar}
             text={tweet.text}
             isProfileImageNft={tweet.isProfileImageNft}
