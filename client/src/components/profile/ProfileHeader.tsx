@@ -23,6 +23,7 @@ const style = {
 const ProfileHeader = () => {
   const router = useRouter();
   const isProfileImageNft = true;
+  const currentAccount = "0x1209901289081209383129381290139";
   return (
     <div className={style.wrapper}>
       <div className={style.header}>
@@ -63,6 +64,24 @@ const ProfileHeader = () => {
               }
             />
           </div>
+        </div>
+        <div className={style.details}>
+          <div>
+            <div className={style.primary}>Anshumali Karna</div>
+          </div>
+          <div className={style.secondary}>
+            {currentAccount && (
+              <>
+                @{currentAccount.slice(0, 4)}...{currentAccount.slice(-4)}
+              </>
+            )}
+          </div>
+        </div>
+        <div className={style.nav}>
+          <div className={style.activeNav}>Tweets</div>
+          <div>Tweets & Replies</div>
+          <div>Media</div>
+          <div>Likes</div>
         </div>
       </div>
     </div>
