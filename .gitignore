@@ -64,3 +64,22 @@ studio/*.tsbuildinfo
 
 # Dotenv and similar local-only files
 studio/*.local
+
+
+smart_contract/node_modules
+smart_contract/.env
+
+# Hardhat files
+smart_contract/cache
+smart_contract/artifacts
+
+# TypeChain files
+smart_contract/typechain
+smart_contract/typechain-types
+
+# solidity-coverage files
+smart_contract/coverage
+smart_contract/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+smart_contract/ignition/deployments/chain-31337
