@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+
 import React, { useState } from "react";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { VscTwitter } from "react-icons/vsc";
